@@ -6,26 +6,30 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 
+/* Calculator Box */
 .calculator {
-  width: 320px;
+  width: 100%;
+  max-width: 360px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  padding: 20px;
+  padding: 18px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+/* Display */
 .display {
   background: #000;
-  color: rgb(0, 187, 255);
-  font-size: 2.2rem;
+  color: #0f0;
+  font-size: 2rem;
   text-align: right;
   padding: 15px;
   border-radius: 12px;
@@ -33,35 +37,56 @@ body {
   overflow-x: auto;
 }
 
+/* Buttons Grid */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 button {
-  padding: 18px;
-  font-size: 1.2rem;
+  padding: 16px;
+  font-size: 1.1rem;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  background: rgba(24, 212, 202, 0.25);
+  background: rgba(255,255,255,0.25);
   color: #fff;
   transition: 0.2s;
 }
 
 button:hover {
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.45);
 }
 
 .operator {
-  background: #51a175;
+  background: #ff9500;
 }
 
 .equal {
-  background: #3480c7;
+  background: #34c759;
 }
 
 .zero {
   grid-column: span 2;
+}
+
+/* 📱 Small Mobile Screens */
+@media (max-width: 400px) {
+  .display {
+    font-size: 1.6rem;
+    padding: 12px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* 💻 Large Screens */
+@media (min-width: 768px) {
+  .calculator {
+    max-width: 380px;
+  }
 }
